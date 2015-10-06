@@ -335,7 +335,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 // Travel limits after homing
-#define X_MAX_POS 160
+#define X_MAX_POS 178
 #define X_MIN_POS 0
 #define Y_MAX_POS 165
 #define Y_MIN_POS 0
@@ -372,10 +372,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
   #ifdef AUTO_BED_LEVELING_GRID
 
     // set the rectangle in which to probe
-    #define LEFT_PROBE_BED_POSITION 6
-    #define RIGHT_PROBE_BED_POSITION 120
-    #define BACK_PROBE_BED_POSITION 115
-    #define FRONT_PROBE_BED_POSITION 6
+    #define LEFT_PROBE_BED_POSITION 40
+    #define RIGHT_PROBE_BED_POSITION 140
+    #define BACK_PROBE_BED_POSITION 140
+    #define FRONT_PROBE_BED_POSITION 40
 
      // set the number of grid points per dimension
      // I wouldn't see a reason to go above 3 (=9 probing points on the bed)
@@ -398,17 +398,17 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
   // these are the offsets to the probe relative to the extruder tip (Hotend - Probe)
   // X and Y offsets must be integers
-  #define X_PROBE_OFFSET_FROM_EXTRUDER -10
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER -36
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -3.5
+  #define X_PROBE_OFFSET_FROM_EXTRUDER -30
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER 16
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -8.70
 
-  #define Z_RAISE_BEFORE_HOMING 4       // (in mm) Raise Z before homing (G28) for Probe Clearance.
+  #define Z_RAISE_BEFORE_HOMING 12       // (in mm) Raise Z before homing (G28) for Probe Clearance.
                                         // Be sure you have this distance over your Z_MAX_POS in case
 
   #define XY_TRAVEL_SPEED 4000         // X and Y axis travel speed between probes, in mm/min
 
-  #define Z_RAISE_BEFORE_PROBING 8    //How much the extruder will be raised before traveling to the first probing point.
-  #define Z_RAISE_BETWEEN_PROBINGS 3  //How much the extruder will be raised when traveling from between next probing points
+  #define Z_RAISE_BEFORE_PROBING 12    //How much the extruder will be raised before traveling to the first probing point.
+  #define Z_RAISE_BETWEEN_PROBINGS 4  //How much the extruder will be raised when traveling from between next probing points
 
   //#define Z_PROBE_SLED // turn on if you have a z-probe mounted on a sled like those designed by Charles Bell
   //#define SLED_DOCKING_OFFSET 5 // the extra distance the X axis must travel to pickup the sled. 0 should be fine but you can push it further if you'd like.
@@ -482,7 +482,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {81.2, 81, 4700, 715}  //{79, 79, 4680, 715}  //(80,80,5000,715) I worked out 5000,715) by trial 24sept andrew
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 2, 45}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {9000,1000,100,300}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_ACCELERATION      {9000,1500,100,300}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  300   // X, Y, Z and E max acceleration in mm/s^2 for r retracts
@@ -754,7 +754,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // Use M206 command to correct for switch height offset to actual nozzle height. Store that setting with M500.
 //
 #define SERVO_ENDSTOPS {-1, -1, 0} // Servo index for X, Y, Z. Disable with -1
-#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 7 ,65} // X,Y,Z Axis Extend and Retract angles
+#define SERVO_ENDSTOP_ANGLES {0,0, 0,0, 60 ,0} // X,Y,Z Axis Extend and Retract angles
 
 /**********************************************************************\
  * Support for a filament diameter sensor
